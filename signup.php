@@ -22,7 +22,7 @@
     
        <div class="form-group">
            <label for="username">user Name</label>
-           <input type="text" class="form-control" name="username" placeholder="Example: nethmi" autocomplete="off" required>
+           <input type="text" class="form-control" name="user_name" placeholder="Example: nethmi"  required>
        </div>
 
        <div class="form-group">
@@ -32,28 +32,28 @@
 
        <div class="form-group">
            <label for="email">Email Address</label>
-           <input type="email" class="form-control" name="user_email" placeholder="someone@site.com" autocomplete="off" required>
+           <input type="email" class="form-control" name="user_email" placeholder="someone@site.com" required>
        </div>
 
        <div class="form-group">
            <label for="country">Country</label>
          <select name="user_country" class="form-control" required>
              <option disabled="">Select your country</option>
-             <option value="">Pakistan</option>
-             <option value="">USA</option>
-             <option value="">India</option>
-             <option value="">UK</option>
-             <option value="">Bangladesh</option>
-             <option value="">Fance</option>
+             <option >Pakistan</option>
+             <option >USA</option>
+             <option >India</option>
+             <option>UK</option>
+             <option >Bangladesh</option>
+             <option >Fance</option>
          </select>
        </div>
 
        <div class="form-group">
-           <label for="gender">Gende</label>
+           <label for="gender">Gender</label>
          <select name="user_gender" class="form-control" required>
              <option disabled="">Select your Gender</option>
-             <option value="">Male</option>
-             <option value="">Female</option>
+             <option >Male</option>
+             <option >Female</option>
             
          </select>
        </div>
@@ -69,7 +69,7 @@
            <button type="submit" class="btn btn-success  btn-lg submit w-100" name="sign_up">Sign Up</button>
        </div>
 
-       <!-- <?php// include("signup_user.php");?> -->
+       <?php include("signup_user.php");?>
     </form>
 
     <div class="text-center small" style="color:#67428B;">Already  have an account?  <a href="signin.php">Sign  In</a></div>
