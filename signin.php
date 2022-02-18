@@ -22,7 +22,7 @@
     
        <div class="form-group">
            <label for="email">Email</label>
-           <input type="email" class="form-control" name="email" placeholder="someone@site.com" autocomplete="off" required>
+           <input type="email" class="form-control" name="email" placeholder="someone@site.com"  required>
        </div>
 
        <div class="form-group">
@@ -36,7 +36,7 @@
            <button type="submit" class="btn btn-success  btn-lg submit" name="sign_in">Sign in</button>
        </div>
 
-       <!-- <?php// include("signin_user.php");?> -->
+       <?php include("signin_user.php");?>
     </form>
 
     <div class="text-center small" style="color:#67428B;">Don't have an account?  <a href="signup.php">Create One</a></div>
