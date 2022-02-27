@@ -95,6 +95,7 @@
     float: left;
     border-radius: 50%;
     border: 3px solid #61Bc71;
+    margin-right: 10px;
 }
 
 
@@ -120,15 +121,15 @@
 }
 
 .righside-left-chat,.rightside-right-chat{
-    float: left;
+    /* float: left; */
     width: 80%;
     position: relative;
 
 }
 
 .rightside-right-chat{
-    float: right;
-    margin-right: 35px;
+    /* float: right; */
+    margin-left: 20%;
 }
 
 .right-header-contentChat{
@@ -142,12 +143,20 @@
     margin-top: 20px;
 }
 
-.right-header-contentChat .righside-left-chatp, .right-header-contentChat,.rightside-right-chat p{
+.right-header-contentChat .rightside-left-chat p, .right-header-contentChat,.rightside-right-chat p {
 
-    background-color: #86BB71;
+ 
     padding: 15px;
     border-radius:8px ;
-    color: #fff;
+    /* color: #fff; */
+}
+.rightside-left-chat{
+    margin-bottom: 40px;
+}
+
+.rightside-left-chat p{
+    background-color: rgb(35, 133, 10);
+
 }
 
 .right-header-contentChat .rightside-right-chat p{

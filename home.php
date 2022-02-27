@@ -110,10 +110,11 @@ if(isset($_SESSION['user-email'])){
                         </div>
                     </div>
                 </div>
-
+            
                 <div class="row">
                     <div id="scrolling_to_bottom" class="col-md-12 right-header-contentChat">
                         <?php
+                        
 
                             $updated_msg=mysqli_query($con, "UPDATE user_chat SET msg_status='read' WHERE sender_username='$username'
                              AND receiver_username='$user_name'");
@@ -125,26 +126,25 @@ if(isset($_SESSION['user-email'])){
 
                            while($row =mysqli_fetch_array($run_messages)){
 
+                            $sender_username='';
+                            $receiver_username='';
+                            $msg_content='';
+                            $msg_date='';
                            
-                            $senderusername=$row['sender_username'];
-                            $receiverusername==$row['receiver_username'];
-                            $msgcontent=$row['msg_content'];
-                            $msgdate==$row['msg_date'];
-                          
-                            echo $senderusername;
-                            echo $receiverusername;
-                            echo $msgcontent;
-                            echo $msgdate;
-                            // print_r($row);
-                            // die();
+                            $sender_username=$row['sender_username'];
+                            $receiver_username=$row['receiver_username'];
+                            $msg_content=$row['msg_content'];
+                            $msg_date=$row['msg_date'];
+                           
+                           
                         ?>
                         <ul>
                             <?php
-                            if($user_name==$senderusername AND $username=$receiverusername){
+                            if($user_name == $sender_username AND $username == $receiver_username){
 
                                 echo "
                                   <li>
-                                         <div class='rightside-chat'>
+                                         <div class='rightside-right-chat'>
                                          <span>$username <small>$msg_date</small></span>
                                          <p>$msg_content</p>
                                         </div>
@@ -152,16 +152,19 @@ if(isset($_SESSION['user-email'])){
                                 ";
                             }
 
-                            else if($user_name==$receiverusername AND $username=$senderusername){
+                            else if($user_name == $receiver_username AND $username == $sender_username){
 
                                 echo "
                                   <li>
-                                         <div class='rightside-chat'>
+                                         <div class='rightside-left-chat'>
                                          <span>$username <small>$msg_date</small></span>
                                          <p>$msg_content</p>
                                         </div>
                                   </li>
                                 ";
+                            }
+                            else{
+                                echo "error";
                             }
 
                             ?>
@@ -189,7 +192,7 @@ if(isset($_SESSION['user-email'])){
     <?php
     if(isset($_POST['submit'])){
         $msg=htmlentities($_POST['msg_content']);
-echo 'hi';
+
             if($msg==""){
 
                 echo "
@@ -223,5 +226,22 @@ echo 'hi';
     }
     // echo 'wrong';
     ?>
+
+        <script>
+            $('#scrolling_to_bottom').animate({
+                scrollTop: $('#scrolling_to_bottom').get(0).scrollHeight},1000);
+            })
+            
+        </script>
+        
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var height=$(window).height();
+                $('.left-chat').css('height',(height-92) +'px');
+                $('.right-header-contentChat').css('height',(height-92) +'px');
+            })
+        </script>
+
 </body>
 </html>
